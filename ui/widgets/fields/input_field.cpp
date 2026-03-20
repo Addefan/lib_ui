@@ -1439,7 +1439,8 @@ void InstantReplaces::add(const QString &what, const QString &with) {
 const InstantReplaces &InstantReplaces::Default() {
 	static const auto result = [] {
 		auto result = InstantReplaces();
-		result.add("--", QString(1, QChar(8212)));
+		result.add("--", QString(1, QChar(8211)));
+		result.add(QString(1, QChar(8211)) + "-", QString(1, QChar(8212)));
 		result.add("<<", QString(1, QChar(171)));
 		result.add(">>", QString(1, QChar(187)));
 		result.add(
@@ -1467,7 +1468,8 @@ const InstantReplaces &InstantReplaces::Default() {
 const InstantReplaces &InstantReplaces::TextOnly() {
 	static const auto result = [] {
 		auto result = InstantReplaces();
-		result.add("--", QString(1, QChar(8212)));
+		result.add("--", QString(1, QChar(8211)));
+		result.add(QString(1, QChar(8211)) + "-", QString(1, QChar(8212)));
 		result.add("<<", QString(1, QChar(171)));
 		result.add(">>", QString(1, QChar(187)));
 		result.add(
